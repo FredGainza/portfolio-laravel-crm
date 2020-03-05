@@ -2,23 +2,27 @@
 
 @section('scripts-header')
     <style>
-    tr td img{
-        width: 75px;
-    }
+        table th, table td{
+            vertical-align: middle !important;
+        }
 
-    img.col-perso{
-        width: 60px;
-    }
+        tr td img{
+            width: 75px;
+        }
 
-    img.col-view{
-        width: 400px;
-        height: auto;
-    }
+        img.col-perso{
+            width: 60px;
+        }
 
-    .bg-body{
-        background-color: #f8fafc;
-    }
-</style>
+        img.col-view{
+            width: 400px;
+            height: auto;
+        }
+
+        .bg-body{
+            background-color: inherit;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -60,8 +64,8 @@
                             <td>
                                 <form action="{{ route('entreprises.destroy', $entreprise->id) }}" method="post">
                                     @csrf
-                                <input type="hidden" name="_id" id="_id" value="{{$entreprise->id}}">
-                                <button type="submit" class="fas fa-times text-danger border-0 bg-body" onclick="return confirm('Confirmez la suppression de cet élément')"></button>
+                                    <input type="hidden" name="_id" id="_id" value="{{$entreprise->id}}">
+                                    <button class="border-0 bg-body px-0 mx-0" type="submit" onclick="return confirm('Confirmez la suppression de cet élément')"><i class="fas fa-times text-danger"></i></button>
                                 </form>
                             </td>
                         </tr>

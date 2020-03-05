@@ -2,31 +2,36 @@
 
 @section('scripts-header')
     <style>
-    tr {
-        line-height: 40px;
-    }
+        table th, table td{
+            vertical-align: middle !important;
+        }
+        tr {
+            line-height: 40px;
+        }
 
-    tr td img{
-        width: 75px;
-    }
+        tr td img{
+            width: 75px;
+        }
 
-    img.col-perso{
-        width: 60px;
-    }
+        img.col-perso{
+            width: 60px;
+        }
 
-    img.col-view{
-        width: 400px;
-        height: auto;
-    }
+        img.col-view{
+            width: 400px;
+            height: auto;
+        }
 
-    .bg-body{
-        background-color: #f8fafc;
-    }
-		td{line-height: 1.5rem;}
-		.table > tbody > tr > td {
-     vertical-align: middle;
-}
-</style>
+        .bg-body{
+            background-color: inherit;
+        }
+
+        td{line-height: 1.5rem;}
+
+        .table > tbody > tr > td {
+            vertical-align: middle;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -80,9 +85,9 @@
                             <td> <a href="{{ route('employes.edit', $employe->id) }}"><i class="fas fa-pen text-success"></i></a></td>
                             <td>
                                 <form action="{{ route('employes.destroy', $employe->id) }}" method="post">
-                                @csrf
-                                <input type="hidden" name="_id" id="_id" value="{{$employe->id}}">
-                                <button type="submit" class="fas fa-times text-danger border-0 bg-body" onclick="return confirm('Confirmez la suppression de cet élément')"></button>
+                                    @csrf
+                                    <input type="hidden" name="_id" id="_id" value="{{$employe->id}}">
+                                    <button class="border-0 bg-body px-0 mx-0" type="submit" onclick="return confirm('Confirmez la suppression de cet élément')"><i class="fas fa-times text-danger"></i></button>
                                 </form>
                             </td>
                         </tr>
