@@ -14,11 +14,11 @@
         width: 400px;
         height: auto;
     }
-		
+
 	.w100resp{
 		width: 100%;
 	}
-			
+
 	@media (min-width: 768px){
 		img.col-perso {
 			width: 50%;
@@ -27,8 +27,8 @@
 			width: 90%;
 		}
 	}
-		
-			
+
+
 	@media (min-width: 992px){
 		img.col-perso {
 			width: 45%;
@@ -37,7 +37,7 @@
 			width: 70%;
 		}
 	}
-				
+
 	@media (min-width: 1200px){
 		img.col-perso {
 			width: 40%;
@@ -45,17 +45,13 @@
 		.w100resp{
 			width: 50%;
 		}
-	}	
+	}
 </style>
 @endsection
 
 @section('content')
 
 <div class="row w100resp mx-auto">
-    {{-- {{ dd($errors) }} --}}
-    {{-- @foreach ($errors->all() as $error)
-        {{$error}};
-    @endforeach --}}
     <div class="col-12">
         <h3 class="mb-4">Editer une entreprise</h3>
         <form action="{{ route('entreprises.update', $entreprise->id) }}" method="POST" enctype="multipart/form-data">
@@ -98,13 +94,4 @@
         </form>
     </div>
 </div>
-{{-- <div class="row">
-    @if ($errors->any())
-    <ul class="list-unstyled">
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-    @endif
-</div> --}}
 @endsection

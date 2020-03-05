@@ -6,7 +6,7 @@
 			.w100resp{
 				width: 100%;
 			}
-		
+
         @media (min-width: 768px){
             .w100resp{
                 width: 95%;
@@ -66,13 +66,4 @@
         </form>
     </div>
 </div>
-{{-- <div class="row">
-    @if ($errors->any())
-    <ul class="list-unstyled">
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-    @endif
-</div> --}}
 @endsection

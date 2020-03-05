@@ -30,32 +30,14 @@
         <div class="col-sm-12 col-md-6 col-lg-3">
             <a href="{{ route('entreprises.create') }}"><button class="btn btn-dark">Ajouter une entreprise</button></a>
         </div>
-        {{-- <div class="col-4 offset-5 text-right">
-            <div class="select">
-                <select onchange="window.location.href = this.value" class="custom-select">
-                    <option class="w-100" value="{{ route('entreprises.index') }}" @unless($name) selected @endunless>-- Toutes les entreprises --</option>
-                    @foreach($entreprises as $entreprise)
-                        <option value="{{ route('entreprises.entreprise', $employe->lastname) }}" {{ $lastname == $employe->lastname ? 'selected' : '' }}>{{ $employe->lastname }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div> --}}
     </div>
+
     <div class="row">
-        <table class="table center" id="tab_ent">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     {{-- <th>Id</th> --}}
                     <th>Raison sociale</th>
-                    {{-- <th>Raison sociale
-                        <div class="btn-group" role="group" aria-label="Menu déroulant">
-                          <button id="affichageName" type="button" class="btn white dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                          <div class="dropdown-menu" aria-labelledby="affichageName">
-                            <a class="dropdown-item" href="{{ route('entreprises.index', $entNameCrt) }}">Affichage par ordre croissant</a>
-                            <a class="dropdown-item" href="{{ route('entreprises.index', $entNameDct) }}">Affichage par ordre decroissant</a>
-                          </div>
-                        </div>
-                    </th> --}}
                     <th>Adresse E-mail</th>
                     <th class="col-perso">Logo</th>
                     <th>Site Web</th>
@@ -71,9 +53,7 @@
                             {{-- <td>{{ $entreprise->id }}</td> --}}
                             <td>{{ $entreprise->name }}</td>
                             <td>{{ $entreprise->email }}</td>
-                            {{-- <td><img src="http://crm.test/storage/compagnies/Aguirre_logo.png" alt=""></td> --}}
                             <td><img src="{{ asset('storage/compagnies/'. $entreprise->logo) }}" alt=""></td>
-                            {{-- <td>{{ $entreprise->logo }}</td> --}}
                             <td>{{ $entreprise->site }}</td>
                             <td> <a href="{{ route('entreprises.show', $entreprise->id) }}"><i class="far fa-eye text-info"></i></a></td>
                             <td> <a href="{{ route('entreprises.edit', $entreprise->id) }}"><i class="fas fa-pen text-success"></i></a></td>
@@ -84,7 +64,6 @@
                                 <button type="submit" class="fas fa-times text-danger border-0 bg-body" onclick="return confirm('Confirmez la suppression de cet élément')"></button>
                                 </form>
                             </td>
-                            {{-- <td> <a href="{{ route('entreprises.destroy', $entreprise->id) }}" onclick="return confirm('Confirmez la suppression de cet élément')"><i class="fas fa-times text-danger"></i></a></td> --}}
                         </tr>
 
                     @endforeach
@@ -94,22 +73,6 @@
         {{ $entreprises->links() }}
     </div>
 </div>
-{{-- </div>
-<div id="toastDelete" aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;" class="invisible">
-    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast"
-        style="position: absolute; bottom: 0; right: 50px;" data-autohide="false">
-        <div class="toast-header">
-            <i class="far fa-comment mr-2 info"></i>
-            <strong class="mr-auto">Information :</strong>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body bg-pers">
-            {{ 'L\'entreprise' .$entreprise->name. ' a été supprimée' }}
-        </div>
-    </div>
-</div> --}}
 @endsection
 
 @section('scripts-footer')

@@ -73,9 +73,7 @@
                             {{-- <td>{{ $employe->id }}</td> --}}
                             <td>{{ $employe->lastname }}</td>
                             <td>{{ $employe->firstname }}</td>
-
                             <td><a href="{{ route('entreprises.show', $employe->entreprise->id) }}" class="text-link">{{$employe->entreprise->name .' (ID. '.$employe->entreprise->id.')'}}</a></td>
-                            {{-- <td>{{ $ent->nom . '( entreprise ID : '. $employe->entreprise_id. ')' }}</td> --}}
                             <td>{{ $employe->email }}</td>
                             <td>{{ $employe->tel }}</td>
                             <td> <a href="{{ route('employes.show', $employe->id) }}"><i class="far fa-eye text-info"></i></a></td>
