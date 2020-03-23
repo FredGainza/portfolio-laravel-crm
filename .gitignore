@@ -16,7 +16,9 @@ public_html/storage
 public_html/hot
 
 storage/*.key
-.env
+.env*
+.owncloudsync.log
+.sync*
 Homestead.yaml
 Homestead.json
 /.vagrant
